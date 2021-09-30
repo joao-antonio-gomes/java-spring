@@ -3,20 +3,13 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <title>Pedidos - Pede+</title>
-</head>
-<body>
+<head th:replace="~{base::head('Novo Pedido - Pede+')}"></head>
 
+<body>
+<div th:replace="~{base::logo}"></div>
 <div class="container mt-4">
-    <div class="p-3 mb-4 text-white bg-dark rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5">Meus Pedidos</h1>
-        </div>
-    </div>
+    <div th:replace="~{base::titulo('Novo Pedido')}"></div>
+
 
     <div class="card">
         <div class="card-body">

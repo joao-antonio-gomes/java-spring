@@ -1,0 +1,37 @@
+<head th:fragment="head(valor)">
+    <style>
+        .logo-container {
+            background-color: #47bcff;
+        }
+
+        .logo {
+            font-family: 'Handlee', cursive;
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title th:text="${valor}"></title>
+</head>
+
+<div th:fragment="logo" class="logo-container mb-3 p-3 text-white d-flex align-items-center justify-content-between">
+    <a href="/home" class="text-white">
+        <span class="logo">spring</span>
+    </a>
+    <span>login</span>
+</div>
+
+<div th:fragment="titulo(valor)" class="p-3 mb-4 text-white bg-dark rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5" th:text="${valor}"></h1>
+    </div>
+</div>

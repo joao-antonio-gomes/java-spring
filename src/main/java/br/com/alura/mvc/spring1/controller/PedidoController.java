@@ -5,6 +5,7 @@ import br.com.alura.mvc.spring1.model.Pedido;
 import br.com.alura.mvc.spring1.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,12 +27,13 @@ public class PedidoController {
     }
 
     @PostMapping("novo")
-    public String novo(@Valid RequisicaoNovoPedido requisicaoNovoPedido, BindingResult result) {
+    public String novo(@Valid RequisicaoNovoPedido requisicaoNovoPedido, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "pedido/formulario";
         }
         Pedido pedido = requisicaoNovoPedido.toPedido();
         pedidoRepository.save(pedido);
-        return "home";
+        model.addAttribute("status", "home");
+        return "redirect:/home";
     }
 }

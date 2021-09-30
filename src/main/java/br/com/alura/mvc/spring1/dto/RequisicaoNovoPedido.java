@@ -1,6 +1,7 @@
 package br.com.alura.mvc.spring1.dto;
 
 import br.com.alura.mvc.spring1.model.Pedido;
+import br.com.alura.mvc.spring1.model.StatusPedido;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -8,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 public class RequisicaoNovoPedido {
 
-    @NotBlank @Min(5) @Max(30)
+    @NotBlank
     private String nomeProduto;
 
     @NotBlank
@@ -56,6 +57,7 @@ public class RequisicaoNovoPedido {
         pedido.setUrlDoProduto(urlProduto);
         pedido.setUrlDaImagem(urlImagem);
         pedido.setNomeProduto(nomeProduto);
+        pedido.setStatus(StatusPedido.AGUARDANDO);
         return pedido;
     }
 }
