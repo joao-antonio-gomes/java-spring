@@ -27,7 +27,9 @@
     <a href="/home" class="text-white">
         <span class="logo">spring</span>
     </a>
-    <span>login</span>
+    <a sec:authorize="isAnonymous()" class="text-light" href="/login">login</a>
+    <a sec:authorize="isAuthenticated()" class="text-light" onclick="document.querySelector('#form-login').submit()" href="#">logout</a>
+    <form th:action="@{/logout}" method="post" id="form-login" hidden></form>
 </div>
 
 <div th:fragment="titulo(valor)" class="p-3 mb-4 text-white bg-dark rounded-3">
